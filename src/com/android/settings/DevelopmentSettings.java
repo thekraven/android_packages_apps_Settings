@@ -76,7 +76,6 @@ public class DevelopmentSettings extends PreferenceActivity
 
         mEnableAdb.setChecked(Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.ADB_ENABLED, 0) != 0);
-        
         mAdbOverNetwork.setChecked(Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.ADB_PORT, 0) > 0);
 
