@@ -160,13 +160,13 @@ public class DevelopmentSettings extends PreferenceActivity
             } else {
                 Settings.Secure.putInt(getContentResolver(), Settings.Secure.ADB_PORT, 5555);
             }
-        } else {
+	} else {
             // Reset the toggle
             if (mCurrentDialog.equals(ENABLE_ADB)) {
                 mEnableAdb.setChecked(false);
             } else {
                 mAdbOverNetwork.setChecked(false);
-            }
+            }	
         }
     }
 
