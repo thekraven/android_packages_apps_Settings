@@ -53,6 +53,7 @@ public class DevelopmentSettings extends PreferenceFragment
                 OnPreferenceChangeListener {
 
     private static final String ENABLE_ADB = "enable_adb";
+	private static final String ADB_NOTIFY = "adb_notify"; 
     private static final String ADB_TCPIP  = "adb_over_network";
 
     private static final String VERIFIER_DEVICE_IDENTIFIER = "verifier_device_identifier";
@@ -84,6 +85,7 @@ public class DevelopmentSettings extends PreferenceFragment
     private IBackupManager mBackupManager;
 
     private CheckBoxPreference mEnableAdb;
+	private CheckBoxPreference mAdbNotify; 
     private CheckBoxPreference mAdbOverNetwork;
     private CheckBoxPreference mKeepScreenOn;
     private CheckBoxPreference mAllowMockLocation;
@@ -122,6 +124,7 @@ public class DevelopmentSettings extends PreferenceFragment
         addPreferencesFromResource(R.xml.development_prefs);
 
         mEnableAdb = (CheckBoxPreference) findPreference(ENABLE_ADB);
+		mAdbNotify = (CheckBoxPreference) findPreference(ADB_NOTIFY); 
         mAdbOverNetwork = (CheckBoxPreference) findPreference(ADB_TCPIP);
 
         mKeepScreenOn = (CheckBoxPreference) findPreference(KEEP_SCREEN_ON);
@@ -177,6 +180,8 @@ public class DevelopmentSettings extends PreferenceFragment
         final ContentResolver cr = getActivity().getContentResolver();
         mEnableAdb.setChecked(Settings.Secure.getInt(cr,
                 Settings.Secure.ADB_ENABLED, 0) != 0);
+		mAdbNotify.setChecked(Settings.Secure.getInt(cr,  
+                Settings.Secure.ADB_NOTIFY, 1) != 0);  
         mAdbOverNetwork.setChecked(Settings.Secure.getInt(cr,
                 Settings.Secure.ADB_PORT, 0) > 0);
 
@@ -459,6 +464,10 @@ public class DevelopmentSettings extends PreferenceFragment
                 Settings.Secure.putInt(getActivity().getContentResolver(),
                         Settings.Secure.ADB_ENABLED, 0);
             }
+		} else if (preference == mAdbNotify) {  
+            Settings.Secure.putInt(getActivity().getContentResolver(),  
+                    Settings.Secure.ADB_NOTIFY,  
+                    mAdbNotify.isChecked() ? 1 : 0);  
         } else if (preference == mAdbOverNetwork) {
             if (mAdbOverNetwork.isChecked()) {
                 mOkClicked = false;
