@@ -618,6 +618,9 @@
     <string name="lock_sounds_enable_title">Screen lock sound</string>
     <!-- Sound settings screen, setting check box label -->
     <string name="haptic_feedback_enable_title">Vibrate on touch</string>
+    <!-- Setting for volume rocker music controls -->
+    <string name="volbtn_music_controls_title">Volume rocker music controls</string>
+    <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
     <!-- Sound settings screen, setting option name checkbox to enable/disable audio recording features that improve audio recording in noisy environments -->
     <string name="audio_record_proc_title">Noise cancellation</string>
     <!-- Volume description for media volume -->
@@ -936,6 +939,18 @@
     <!-- Add application dialog box title -->
     <string name="profile_choose_app">Choose application</string>
     <string name="profile_settings_header">Profile settings</string>
+
+    <!-- Profiles - system settings -->
+    <string name="profile_system_settings_title">System settings</string>
+    <string name="profile_lockmode_title">Lock screen mode</string>
+    <string name="profile_lockmode_default">Default</string>
+    <string name="profile_lockmode_insecure">Insecure</string>
+    <string name="profile_lockmode_disabled">Disabled</string>
+    <string name="profile_lockmode_default_summary">Use system default</string>
+    <string name="profile_lockmode_insecure_summary">Use insecure lock screen</string>
+    <string name="profile_lockmode_disabled_summary">Lockscreen is disabled</string>
+
+    <string name="profile_disable_screen_lock_summary">Disable lock screen security while this profile is active</string>
 
     <!-- Connection override toggles (not all are used at this time ) -->
     <string name="possibleButtons">Possible Buttons</string>

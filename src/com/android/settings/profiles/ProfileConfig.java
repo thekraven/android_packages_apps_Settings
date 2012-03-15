@@ -16,6 +16,7 @@
 
 package com.android.settings.profiles;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 import android.app.AlertDialog;
@@ -27,7 +28,9 @@ import android.app.StreamSettings;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.media.AudioManager;
+import android.net.wimax.WimaxHelper;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
@@ -56,12 +59,14 @@ public class ProfileConfig extends SettingsPreferenceFragment
 
     private NamePreference mNamePreference;
 
+    private ListPreference mScreenLockModePreference;
+
     // constant value that can be used to check return code from sub activity.
     private static final int PROFILE_GROUP_DETAILS = 1;
 
     private StreamItem[] mStreams;
 
-    private ConnectionItem[] mConnections;
+    private ArrayList<ConnectionItem> mConnections;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -74,13 +79,14 @@ public class ProfileConfig extends SettingsPreferenceFragment
                 new StreamItem(AudioManager.STREAM_NOTIFICATION, getString(R.string.notification_volume_title))
         };
 
-        mConnections = new ConnectionItem[] {
-                new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_BLUETOOTH, getString(R.string.toggleBluetooth)),
-                new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_GPS, getString(R.string.toggleGPS)),
-                new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFI, getString(R.string.toggleWifi)),
-                new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFIAP, getString(R.string.toggleWifiAp))
-                //new ConnectionItem(ConnectivityManager.TYPE_WIMAX, getString(R.string.toggleWimax))
-        };
+        mConnections = new ArrayList<ConnectionItem>();
+        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_BLUETOOTH, getString(R.string.toggleBluetooth)));
+        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_GPS, getString(R.string.toggleGPS)));
+        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFI, getString(R.string.toggleWifi)));
+        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFIAP, getString(R.string.toggleWifiAp)));
+        if (WimaxHelper.isWimaxSupported(getActivity())) {
+            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIMAX, getString(R.string.toggleWimax)));
+        }
 
         addPreferencesFromResource(R.xml.profile_config);
 
@@ -145,6 +151,24 @@ public class ProfileConfig extends SettingsPreferenceFragment
             mNamePreference = new NamePreference(getActivity(), mProfile.getName());
             mNamePreference.setOnPreferenceChangeListener(this);
             generalPrefs.addPreference(mNamePreference);
+        }
+
+        // Populate system settings
+        PreferenceGroup systemPrefs = (PreferenceGroup) prefSet.findPreference("profile_system_settings");
+        if (systemPrefs != null) {
+            systemPrefs.removeAll();
+
+            // Lockscreen mode preference
+            mScreenLockModePreference = new ListPreference(getActivity());
+            mScreenLockModePreference.setTitle(R.string.profile_lockmode_title);
+            mScreenLockModePreference.setEntries(R.array.profile_lockmode_entries);
+            mScreenLockModePreference.setEntryValues(R.array.profile_lockmode_values);
+            mScreenLockModePreference.setPersistent(false);
+            mScreenLockModePreference.setSummary(getResources().getStringArray(
+                    R.array.profile_lockmode_summaries)[mProfile.getScreenLockMode()]);
+            mScreenLockModePreference.setValue(String.valueOf(mProfile.getScreenLockMode()));
+            mScreenLockModePreference.setOnPreferenceChangeListener(this);
+            systemPrefs.addPreference(mScreenLockModePreference);
         }
 
         // Populate the audio streams list
@@ -231,8 +255,12 @@ public class ProfileConfig extends SettingsPreferenceFragment
                 mProfile.setName(name);
             } else {
                 mNamePreference.setName(mProfile.getName());
-                Toast.makeText(getActivity(), R.string.duplicate_profile_name, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.duplicate_profile_name, Toast.LENGTH_LONG).show();
             }
+        } else if (preference == mScreenLockModePreference) {
+            mProfile.setScreenLockMode(Integer.valueOf((String) newValue));
+            mScreenLockModePreference.setSummary(getResources().getStringArray(
+                    R.array.profile_lockmode_summaries)[mProfile.getScreenLockMode()]);
         }
         return true;
     }
