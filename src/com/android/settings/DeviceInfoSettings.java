@@ -80,7 +80,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
 
         setStringSummary(KEY_FIRMWARE_VERSION, Build.VERSION.RELEASE);
         findPreference(KEY_FIRMWARE_VERSION).setEnabled(true);
-        setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
+        setValueSummary(KEY_BASEBAND_VERSION, "cdma.version.baseband");
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL + getMsvSuffix());
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
@@ -210,6 +210,35 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
         }
     }
 
+	private String getCDMAbaseband() {
+      String bband = null;
+      BufferedReader reader = null;
+
+      try {
+         // Grab a reader to /sys/devices/system/soc/soc0/build_id
+         reader = new BufferedReader(new InputStreamReader(new FileInputStream("/sys/devices/system/soc/soc0/build_id")), 1000);
+
+         // Grab the first line from build_id
+          String line = reader.readLine();
+
+         // Split on the colon, we need info to the right of colon
+         bband = line.trim();
+      }
+      catch(IOException io) {
+         io.printStackTrace();
+         // bband = new String[1];
+         bband = "error";
+      }
+      finally {
+         // Make sure the reader is closed no matter what
+         try { reader.close(); }
+         catch(Exception e) {}
+         reader = null;
+      }
+
+      return bband;
+    }
+	
     private String getFormattedKernelVersion() {
         String procVersionStr;
 
