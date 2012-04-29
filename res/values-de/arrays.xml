@@ -349,14 +349,6 @@
     <item>Aus</item>
   </string-array>
 
-  <string-array name="entries_heapsize">
-    <item>12 MB</item>
-    <item>16 MB</item>
-    <item>24 MB</item>
-    <item>32 MB</item>
-    <item>48 MB</item>
-  </string-array>
-
   <string-array name="pref_zram_size_entries">
     <item>Deaktiviert</item>
     <item>10%</item>
@@ -388,4 +380,28 @@
     <item>10 Minuten</item>
     <item>30 Minuten</item>
   </string-array>
+
+  <string-array name="profile_entries">
+      <item>Aktivieren</item>
+      <item>Deaktivieren</item>
+      <item>Nicht modifizieren</item>
+  </string-array>
+
+  <string-array name="profile_connection_entries">
+      <item>Deaktivieren</item>
+      <item>Aktivieren</item>
+  </string-array>
+
+  <string-array name="location_entries_gps_source">
+      <item>Interne GPS-Antenne</item>
+  </string-array>
+
+  <!-- Volume Overlay options. -->
+  <string-array name="volume_overlay_entries">
+      <item>Einzeln</item>
+      <item>Erweiterbar</item>
+      <item>Erweitert</item>
+      <item>Keine</item>
+  </string-array>
+
 </resources>
