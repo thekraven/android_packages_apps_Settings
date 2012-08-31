@@ -307,11 +307,16 @@
     <string name="automatic_brightness" msgid="5014143533884135461">"Luminosità automatica"</string>
     <string name="title_font_size" msgid="4405544325522105222">"Dimensione dei caratteri"</string>
     <string name="dialog_title_font_size" msgid="2231507851258955038">"Dimensione caratteri"</string>
-    <string name="battery_pulse_title">"Lampeggia con batteria scarica"</string>
+    <string name="battery_light_title">Indicatore batteria</string>
+    <string name="battery_low_pulse_title">Lampeggia con batteria scarica</string>
+    <string name="battery_light_list_title">Colori</string>
+    <string name="battery_light_low_color_title">Batteria scarica</string>
+    <string name="battery_light_medium_color_title">In carica</string>
+    <string name="battery_light_full_color_title">Carica completa</string>
     <string name="backlight_title">"Luminosità automatica"</string>
     <string name="backlight_summary">"Configura livelli e filtri"</string>
     <string name="light_filter_title">"Filtro sensore luminosità"</string>
-    <string name="light_filter_enabled_title">"Attivo"</string>
+    <string name="light_filter_enabled_title">"Attivato"</string>
     <string name="light_filter_enabled_summary">"Calcola una media dei dati rilevati dal sensore per ridurre i cambiamenti di luminosità"</string>
     <string name="light_filter_window_title">"Finestra di tempo"</string>
     <string name="light_filter_window_summary">"Il valore filtrato è la media dei valori ottenuti in questo intervallo"</string>
@@ -393,19 +398,17 @@
     <string name="navigation_bar_save_message">Impostazioni della barra di navigazione salvate</string>
     <string name="navigation_bar_reset_toast">Barra di navigazione resettata</string>
     <string name="power_widget_title">"Power widget"</string>
-    <string name="title_expanded_widget">"Mostra il power widget"</string>
-    <string name="summary_expanded_widget">"Mostra il power widget nel menù delle notifiche"</string>
+    <string name="power_widget_behavior">"Comportamento widget"</string>
+    <string name="power_widget_appearance">"Aspetto widget"</string>
+    <string name="title_expanded_widget">"Power widget"</string>
     <string name="title_expanded_hide_onchange">"Nascondi dopo modifica"</string>
-    <string name="summary_expanded_hide_onchange">"Nascondi il menù delle notifiche dopo aver premuto un tasto nel power widget"</string>
     <string name="title_expanded_hide_indicator">"Nascondi indicatori"</string>
-    <string name="summary_expanded_hide_indicator">"Nascondi indicatori del power widget"</string>
     <string name="title_expanded_hide_scrollbar">"Nascondi barra scorrimento"</string>
-    <string name="summary_expanded_hide_scrollbar">"Nascondi la barra di scorrimento quando ci sono più interruttori di quelli visualizzabili"</string>
-    <string name="title_widget_picker">"Interruttori visualizzati"</string>
-    <string name="summary_widget_picker">"Seleziona quali interruttori mostrare nel power widget"</string>
-    <string name="title_widget_order">"Ordine degli interruttori"</string>
-    <string name="summary_widget_order">"Seleziona l\'ordine degli interruttori nel power widget"</string>
-    <string name="title_buttons">"Interruttori"</string>
+    <string name="title_widget_picker">"Pulsanti visualizzati"</string>
+    <string name="summary_widget_picker">"Visualizza o modifica i pulsanti visualizzati"</string>
+    <string name="title_widget_order">"Ordine dei pulsanti"</string>
+    <string name="summary_widget_order">"Visualizza o modifica l\'ordine dei pulsanti"</string>
+    <string name="title_buttons">"Pulsanti"</string>
     <string name="title_toggle_wifi">"Wi-Fi"</string>
     <string name="title_toggle_bluetooth">"Bluetooth"</string>
     <string name="title_toggle_gps">"GPS"</string>
@@ -425,27 +428,22 @@
     <string name="title_toggle_media_previous">"Media: Traccia precedente"</string>
     <string name="title_toggle_media_next">"Media: Traccia successiva"</string>
     <string name="title_toggle_lte">"LTE"</string>
-    <string name="title_toggle_wimax">"WiMAX"</string>
-    <string name="title_button_modes">"Modalità interruttore"</string>
+    <string name="title_toggle_wimax">"WiMax"</string>
+    <string name="title_button_modes">"Modalità pulsante"</string>
     <string name="pref_brightness_mode_title">"Modalità luminosità"</string>
-    <string name="pref_brightness_mode_summary">"Scegli come l\'interruttore della luminosità schermo modifica la luminosità"</string>
+    <string name="pref_brightness_mode_summary">"Visualizza o modifica gli effetti del pulsante luminosità"</string>
     <string name="cm_brightness_mode_auto">"Automatico"</string>
     <string name="cm_brightness_mode_dim">"Oscuro"</string>
     <string name="pref_network_mode_title">"Modalità di rete"</string>
-    <string name="pref_network_mode_summary">"Scegli come l\'interruttore della modalità di rete modifica il tipo di rete"</string>
     <string name="pref_screentimeout_mode_title">"Modalità sospensione schermo"</string>
-    <string name="pref_screentimeout_mode_summary">"Scegli come l\'interruttore di sospensione schermo modifica i tempi di sospensione"</string>
     <string name="pref_ring_mode_title">"Modalità suoneria"</string>
-    <string name="pref_ring_mode_summary">"Scegli come l\'interruttore della suoneria modifica i suoni"</string>
+    <string name="pref_ring_mode_summary">"Visualizza o modifica gli effetti del pulsante audio"</string>
     <string name="cm_sound_mode_silent">"Silenzioso"</string>
     <string name="cm_sound_mode_vibrate">"Vibrazione"</string>
     <string name="cm_sound_mode_sound">"Suoneria"</string>
-    <string name="cm_sound_mode_soundVibrate">"Suoneria+Vibrazione"</string>
+    <string name="cm_sound_mode_soundVibrate">"Suoneria + Vibrazione"</string>
     <string name="pref_flash_mode_title">"Modalità torcia LED"</string>
-    <string name="pref_flash_mode_summary">"Scegli l\'intensità della torcia LED"</string>
-    <string name="toggles_not_enough_space">Lo spazio è limitato a sei interruttori</string>
     <string name="expanded_haptic_feedback_title">"Vibrazione al tocco"</string>
-    <string name="expanded_haptic_feedback_summary">"Attiva/Disattiva la vibrazione al tocco"</string>
     <string name="status_bar_title">"Barra di stato"</string>
     <string name="status_bar_clock_title">"Orologio"</string>
     <string name="status_bar_general_title">"Generico"</string>
@@ -479,8 +477,8 @@
     <string name="lockscreen_weather_summary">Visualizza informazioni meteo nella schermata di blocco</string>
     <string name="lockscreen_weather_enabled">Abilitato</string>
     <string name="weather_enable">Visualizza meteo</string>
-    <string name="weather_source">Yahoo! Weather</string>
-    <string name="weather_use_custom_location">Usa posizione personalizzata</string>
+    <string name="weather_source">Yahoo! Meteo</string>
+    <string name="weather_use_custom_location">Posizione personalizzata</string>
     <string name="weather_geolocated">Geolocalizzazione usando la rete cellulare</string>
     <string name="weather_custom_location_dialog_title">Inserisci posizione</string>
     <string name="weather_custom_location_hint">Città, Stato</string>
@@ -554,11 +552,11 @@
     <string name="profile_connectionoverrides_title">"Sovrascrittura connessioni"</string>
     <string name="profile_volumeoverrides_title">"Sovrascrittura volumi"</string>
     <string name="profile_vibratoroverrides_title">Sovrascrittura vibrazione</string>
-    <string name="connection_state_disabled">"Disattiva"</string>
-    <string name="connection_state_enabled">"Attiva"</string>
+    <string name="connection_state_disabled">"Disattivato"</string>
+    <string name="connection_state_enabled">"Attivato"</string>
     <string name="volume_override_summary">"Imposta a"</string>
-    <string name="vibrator_state_disabled">Disabilitato</string>
-    <string name="vibrator_state_enabled">Abilitato</string>
+    <string name="vibrator_state_disabled">Disattivato</string>
+    <string name="vibrator_state_enabled">Attivato</string>
     <string name="vibrator_state_silent">Solo in silenzioso</string>
     <string name="profile_profiles_manage">"Profili"</string>
     <string name="profile_profile_manage">"Gestisci profili"</string>
@@ -616,7 +614,7 @@
     <string name="toggleAirplane">"Modalità aereoplano"</string>
     <string name="toggleFlashlight">"Torcia"</string>
     <string name="toggleLockScreen">"Blocco schermo"</string>
-    <string name="toggleWimax">"WiMAX"</string>
+    <string name="toggleWimax">"WiMax"</string>
     <string name="biometric_weak_improve_matching_title" msgid="8754080894393195194">"Migliora riconoscimento viso"</string>
     <string name="lock_after_timeout" msgid="4590337686681194648">"Blocca automaticamente"</string>
     <string name="lock_after_timeout_summary" msgid="6128431871360905631">"<xliff:g id="TIMEOUT_STRING">%1$s</xliff:g> dopo sospensione"</string>
@@ -845,8 +843,6 @@
     <string name="cpu_max_freq_title">"Frequenza massima CPU"</string>
     <string name="cpu_set_on_boot">"Imposta all\'avvio"</string>
     <string name="cpu_set_on_boot_summary">"Reimposta i parametri selezionati ad ogni riavvio"</string>
-    <string name="pref_disable_bootanimation_title">Disabilita bootanimation</string>
-    <string name="pref_disable_bootanimation_summary">Non visualizza la bootanimation per un avvio più rapido</string>
     <string name="memory_management_title">"Gestione memoria"</string>
     <string name="memory_management_summary">"Personalizza l\'uso della memoria per modificare le prestazioni del sistema"</string>
     <string name="pref_zram_title">"zRam"</string>
@@ -897,7 +893,7 @@
     <string name="anonymous_learn_more">"Maggiori informazioni"</string>
     <string name="anonymous_notification_desc">"Attiva o disattiva le statistiche CyanogenMod"</string>
     <string name="preview_id_title">"ID Univoco"</string>
-    <string name="preview_device_title">"Terminale"</string>
+    <string name="preview_device_title">"Dispositivo"</string>
     <string name="preview_version_title">"Versione"</string>
     <string name="preview_country_title">"Nazione"</string>
     <string name="preview_carrier_title">"Operatore"</string>
@@ -1642,7 +1638,7 @@
     <string name="allow_mock_location_summary" msgid="317615105156345626">"Consenti posizioni fittizie"</string>
     <string name="adb_warning_title" msgid="6234463310896563253">"Consentire debug USB?"</string>
     <string name="adb_warning_message" msgid="7316799925425402244">"Il debug USB è solo a scopo di sviluppo. Utilizzalo per copiare dati tra il computer e il dispositivo, per installare applicazioni sul tuo dispositivo senza notifica e per leggere i dati dei log."</string>
-    <string name="root_access">"Accesso come root"</string>
+    <string name="root_access">"Accesso root"</string>
     <string name="root_access_warning_title">"Permetti l\'accesso come root?"</string>
     <string name="root_access_warning_message">"Permettere alle applicazioni di richiedere i permessi di root è estremamente pericoloso e potrebbe compromettere la sicurezza del sistema!"</string>
     <string name="root_access_none">"Disattivo"</string>
@@ -1956,7 +1952,7 @@
     <string name="show_all_anrs" msgid="28462979638729082">"Mostra tutti errori ANR"</string>
     <string name="show_all_anrs_summary" msgid="641908614413544127">"Mostra finestra ANR per applicazioni in background"</string>
     <string name="kill_app_longpress_back">"Termina appl. con tasto"</string>
-    <string name="kill_app_longpress_back_summary">"Termina l\'applicazione in primo piano tenendo premuto a lungo il tasto indietro"</string>
+    <string name="kill_app_longpress_back_summary">"Termina l\'applicazione in primo piano tenendo premuto il tasto indietro"</string>
     <string name="data_usage_summary_title" msgid="3804110657238092929">"Utilizzo dati"</string>
     <string name="data_usage_cycle" msgid="5652529796195787949">"Ciclo utilizzo dati"</string>
     <string name="data_usage_menu_roaming" msgid="8042359966835203296">"Roaming dei dati"</string>
@@ -2073,9 +2069,9 @@
     <string name="backup_pw_set_button_text" msgid="2387480910044648795">"Imposta password di backup"</string>
     <string name="backup_pw_cancel_button_text" msgid="8845630125391744615">"Annulla"</string>
     <string name="additional_system_update_settings_list_item_title" msgid="214987609894661992">"Aggiornamenti di sistema aggiuntivi"</string>
-    <string name="display_category_animation_options_title">Animazione</string>
-    <string name="display_electron_beam_animation_on_title">Animazione accensione schermo</string>
-    <string name="display_electron_beam_animation_off_title">Animazione spegnimento schermo</string>
+    <string name="display_category_animation_options_title">Animazione schermo</string>
+    <string name="display_electron_beam_animation_on_title">Animazione accensione</string>
+    <string name="display_electron_beam_animation_off_title">Animazione spegnimento</string>
     <string name="display_category_wakeup_options_title">"Opzioni attivazione"</string>
     <string name="pref_volume_wake_title">"Tasti volume"</string>
     <string name="pref_volume_wake_summary">"Premere i tasti del volume farà attivare il terminale"</string>
@@ -2085,9 +2081,24 @@
     <string name="profile_write_failed">"Scrittura etichetta fallita!"</string>
     <string name="profile_selected">"Profilo selezionato: %1$s"</string>
     <string name="profile_nfc_text">"Scrivere un profilo per un\'etichetta NFC permette di toccare l\'etichetta per selezionare quel profilo. Toccandola una seconda volta verrà selezionato il profilo precedente."</string>
+    <string name="profile_unknown_nfc_tag">Profilo sconosciuto</string>
+    <string name="profile_add_nfc_text">Questo tag NFC si riferisce ad un profilo sconosciuto. Collegare questo tag NFC ad un profilo esistente permetterà di selezionarlo in futuro.</string>
+    <string name="profile_select">Seleziona profilo</string>
     <string name="stylus_icon_enabled_title">Visualizza puntatore</string>
     <string name="stylus_icon_enabled_summary">Visualizza il puntatore quando disegni col pennino</string>
     <string name="device_hostname">Hostname dispositivo</string>
     <string name="status_bar_notif_count_title">Contatore notifiche</string>
     <string name="status_bar_notif_count_summary">Visualizza il numero di notifiche in sospeso nella barra di stato</string>
+    <string name="increasing_ring_title">Suoneria incrementale</string>
+    <string name="checkbox_increasing_ring">Attiva</string>
+    <string name="increasing_ring_min_volume_title">Volume di partenza</string>
+    <string name="increasing_ring_volume_notice">Avviso:\n Quando il volume di partenza è superiore a quello della suoneria, questa verrà riprodotta interamente con il nuovo volume impostato.</string>
+    <string name="increasing_ring_interval_title">Intervallo incremento</string>
+    <string name="increasing_ring_interval_eachring">Ogni squillo</string>
+    <string name="increasing_ring_interval_half_second">0.5 secondi</string>
+    <string name="increasing_ring_interval_1second">1 secondo</string>
+    <string name="increasing_ring_interval_2seconds">2 secondi</string>
+    <string name="increasing_ring_interval_3seconds">3 secondi</string>
+    <string name="increasing_ring_interval_5seconds">5 secondi</string>
+    <string name="increasing_ring_interval_10seconds">10 secondi</string>
 </resources>

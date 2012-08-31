@@ -577,7 +577,6 @@
     <string name="wifi_p2p_menu_search" msgid="7189970585393813135">"Rechercher"</string>
     <string name="wifi_p2p_menu_create_group" msgid="7595229161883902082">"Créer un groupe"</string>
     <string name="wifi_p2p_menu_remove_group" msgid="4844634506540667517">"Supprimer le groupe"</string>
-    <string name="wifi_p2p_menu_advanced" msgid="2578792521809265949">"Avancés"</string>
     <string name="wifi_p2p_available_devices" msgid="5943352520059654483">"Appareils disponibles"</string>
     <string name="wifi_tether_checkbox_text" msgid="6961605862058056788">"Point d\'accès Wi-Fi"</string>
     <string name="wifi_tether_enabled_subtext" msgid="8948641212931906143">"Point d\'accès Wi-Fi mobile <xliff:g id="NETWORK_SSID">%1$s</xliff:g> actif"</string>
@@ -805,29 +804,27 @@
 
     <!-- Power Widget #CM -->
     <string name="power_widget_title">Gestion de l\'alimentation</string>
+    <string name="power_widget_behavior">Comportement du widget</string>
     <string name="title_expanded_widget">Afficher le widget</string>
-    <string name="summary_expanded_widget">Afficher le contrôle rapide de l\'alimentation dans la barre de notification</string>
     <string name="title_expanded_hide_onchange">Cacher après changement</string>
-    <string name="summary_expanded_hide_onchange">Masquer la barre de notification lorsqu\'un bouton du widget est cliqué</string>
     <string name="title_expanded_hide_indicator">Cacher les indicateurs</string>
-    <string name="summary_expanded_hide_indicator">Masquer les indicateurs du widget</string>
     <string name="title_expanded_hide_scrollbar">Cacher barre de défilement</string>
-    <string name="summary_expanded_hide_scrollbar">Masquer la barre de défilement s\'il y a trop de boutons dans le widget</string>
     <string name="title_widget_picker">Boutons du widget</string>
     <string name="summary_widget_picker">Choisir les boutons à afficher</string>
     <string name="title_widget_order">Ordre des boutons</string>
     <string name="summary_widget_order">Modifier l\'ordre des boutons présents sur le widget</string>
     <string name="title_buttons">Boutons</string>
-    <string name="title_toggle_wifi">Wifi</string>
+    <string name="title_toggle_wifi">Wi-Fi</string>
     <string name="title_toggle_bluetooth">Bluetooth</string>
     <string name="title_toggle_gps">GPS</string>
     <string name="title_toggle_sound">Son</string>
     <string name="title_toggle_brightness">Luminosité</string>
     <string name="title_toggle_sync">Sync. données</string>
-    <string name="title_toggle_wifiap">Partage Wifi</string>
+    <string name="title_toggle_wifiap">Partage Wi-Fi</string>
     <string name="title_toggle_screentimeout">Timeout écran</string>
     <string name="title_toggle_mobiledata">Données mobile</string>
     <string name="title_toggle_lockscreen">Verrouillage</string>
+    <string name="title_toggle_lte">LTE</string>
     <string name="title_toggle_networkmode">Réseau mobile</string>
     <string name="title_toggle_autorotate">Orientation</string>
     <string name="title_toggle_airplane">Mode avion</string>
@@ -843,18 +840,14 @@
     <string name="cm_brightness_mode_auto">Auto.</string>
     <string name="cm_brightness_mode_dim">Réduit</string>
     <string name="pref_network_mode_title">Réseau mobile</string>
-    <string name="pref_network_mode_summary">Sélection des types de réseaux pour le bouton 2G/3G</string>
     <string name="pref_screentimeout_mode_title">Timeout de l\'écran</string>
-    <string name="pref_screentimeout_mode_summary">Sélection des modes du bouton Timeout de l\'écran</string>
     <string name="pref_ring_mode_title">Sonnerie</string>
     <string name="pref_ring_mode_summary">Sélection des modes de sonnerie disponibles</string>
     <string name="cm_sound_mode_silent">Silencieux</string>
     <string name="cm_sound_mode_vibrate">Vibreur</string>
     <string name="cm_sound_mode_sound">Son</string>
-    <string name="cm_sound_mode_soundVibrate">Son+Vibreur</string>
+    <string name="cm_sound_mode_soundVibrate">Son et Vibreur</string>
     <string name="pref_flash_mode_title">Torche</string>
-    <string name="pref_flash_mode_summary">Puissance de la diode</string>
-    <string name="toggles_not_enough_space">L\'espace est limité à 6 éléments</string>
 
     <!-- Status bar #CM -->
     <string name="status_bar_title">Barre d\'état</string>
@@ -863,6 +856,7 @@
     <string name="status_bar_show_clock_title">Afficher l\'heure</string>
     <string name="status_bar_show_clock_summary">Afficher l\'heure dans la barre d\'état</string>
     <string name="status_bar_am_pm_title">Indicateur AM/PM</string>
+    <string name="status_bar_am_pm_info">Horloge 24 heures activée</string>
     <string name="status_bar_am_pm_summary">Affiche l\'indicateur AM/PM à côté de l\'heure</string>
     <string name="status_bar_battery_title">Batterie</string>
     <string name="status_bar_battery_summary">Style de l\'indicateur de niveau de charge</string>
@@ -876,7 +870,6 @@
 
     <!-- Power Widget, Haptic feedback #CM -->
     <string name="expanded_haptic_feedback_title">Retour haptique</string>
-    <string name="expanded_haptic_feedback_summary">Active ou non le retour haptique (vibration)</string>
 
     <!-- Lock screen #CM -->
     <string name="lock_screen_title">Ecran de verrouillage</string>
@@ -993,26 +986,18 @@
     <string name="profiles_add">Ajouter</string>
     <string name="profile_menu_delete">Supprimer</string>
     <string name="profile_settings_title">Profil</string>
-
-    <!-- Add Profile -->
     <string name="add_profile_dialog_title">Créer nouveau profil</string>
     <string name="profile_name_title">Nom du profil</string>
     <string name="profile_profile_name_prompt">Entrer le nom du profil</string>
     <string name="menu_new_profile">Nouveau profil</string>
     <string name="menu_new_profile_summary">Ajouter et configurer un nouveau profil</string>
     <string name="new_profile_name">&lt;nouveau profil&gt;</string>
-
-    <!-- Rename Profile Dialog  -->
     <string name="rename_dialog_title">Renommer</string>
     <string name="rename_dialog_message">Saisir un nouveau nom</string>
     <string name="duplicate_appgroup_name">Ce groupe existe déjà !</string>
     <string name="duplicate_profile_name">Ce profil existe déjà !</string>
-
-    <!-- Reset Profiles -->
     <string name="profile_reset_title">Reset</string>
     <string name="profile_reset_message">Etes-vous certain de vouloir supprimer tous les profils et groupes d\'applications ?</string>
-
-    <!-- Delete confimation messages -->
     <string name="profile_delete_confirm">Supprimer ce profil ?</string>
     <string name="profile_app_delete_confirm">Supprimer cette application ?</string>
     <string name="profile_cannot_delete">Vous ne pouvez pas supprimer le profil actif</string>
@@ -1020,6 +1005,10 @@
     <!-- Profile Config screen PreferenceGroup titles -->
     <string name="profile_connectionoverrides_title">Connexions</string>
     <string name="profile_volumeoverrides_title">Volume perso.</string>
+    <string name="profile_vibratoroverrides_title">Vibreur</string>
+    <string name="vibrator_state_disabled">Désactivé</string>
+    <string name="vibrator_state_enabled">Actif</string>
+    <string name="vibrator_state_silent">Uniquement si silencieux</string>
     <string name="connection_state_disabled">Inactif</string>
     <string name="connection_state_enabled">Actif</string>
     <string name="volume_override_summary">Actuel</string>
@@ -1028,7 +1017,7 @@
     <string name="profile_profiles_manage">Profils</string>
     <string name="profile_profile_manage">Gérer le profil</string>
     <string name="profile_applist_manage">Liste des applications</string>
-    <string name="profile_appgroups_manage">Gérer groupes d\'applications</string>
+    <string name="profile_appgroups_manage">Gérer les groupes</string>
     <string name="profile_appgroup_manage">Profil</string>
 
     <!-- Profile settings screen, section header for settings related to notification profiles -->
@@ -1042,6 +1031,24 @@
     <string name="vibrate_mode">Vibreur</string>
     <string name="choose_soundtone">Son de notification</string>
     <string name="choose_ringtone">Choix de la sonnerie</string>
+
+    <!-- Status bar notification count -->
+    <string name="status_bar_notif_count_title">Compteur de notifications</string>
+    <string name="status_bar_notif_count_summary">Afficher le nombre de notifications en attente dans la barre d\'état</string>
+    <string name="increasing_ring_title">Sonnerie progressive</string>
+    <string name="checkbox_increasing_ring">Activer</string>
+
+    <!-- Sound settings screen, the title of the volume bar to adjust the minimum increasing ring volume -->
+    <string name="increasing_ring_min_volume_title">Volume de départ</string>
+    <string name="increasing_ring_volume_notice">Note:\nComme le volume défini est plus grand que celui de la sonnerie, il sera réduit à son niveau.</string>
+    <string name="increasing_ring_interval_title">Intervale de progression</string>
+    <string name="increasing_ring_interval_eachring">A chaque sonnerie</string>
+    <string name="increasing_ring_interval_half_second">0.5 secondes</string>
+    <string name="increasing_ring_interval_1second">1 seconde</string>
+    <string name="increasing_ring_interval_2seconds">2 secondes</string>
+    <string name="increasing_ring_interval_3seconds">3 secondes</string>
+    <string name="increasing_ring_interval_5seconds">5 secondes</string>
+    <string name="increasing_ring_interval_10seconds">10 secondes</string>
 
     <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
     <string name="soundtone_title">Son de notification</string>
@@ -1070,7 +1077,25 @@
     <string name="profile_lockmode_insecure_summary">Ecran de verrouillage non sécurisé</string>
     <string name="profile_lockmode_disabled_summary">Ecran de verrouillage désactivé</string>
 
+    <string name="profile_airplanemode_title">Mode avion</string>
+    <string name="profile_airplanemode_default">Défaut</string>
+    <string name="profile_airplanemode_enabled">Actif</string>
+    <string name="profile_airplanemode_disabled">Désactivé</string>
+    <string name="profile_airplanemode_default_summary">Paramètres génériques</string>
+    <string name="profile_airplanemode_enabled_summary">Mode avion actif</string>
+    <string name="profile_airplanemode_disabled_summary">Mode avion désactivé</string>
     <string name="profile_disable_screen_lock_summary">Désactive l\'écran de verrouillage lorsque ce profil est actif</string>
+
+    <!-- NFC... need help to translate that -->
+    <string name="profile_write_nfc_tag">Write to NFC tag</string>
+    <string name="profile_write_touch_tag">Toucher le tag pour écrire</string>
+    <string name="profile_write_success">Tag écrit avec succès</string>
+    <string name="profile_write_failed">Impossible d\'écrire le Tag !</string>
+    <string name="profile_selected">Profil sélectionné: %1$s</string>
+    <string name="profile_nfc_text">Writing a profile to a NFC tag allows for tapping the tag to select the profile. Tapping a second time will select the previously selected profile.</string>
+    <string name="profile_unknown_nfc_tag">Profil inconnu</string>
+    <string name="profile_add_nfc_text">Ce tag NFC ne se réfère à aucun profil. Liez ce tag à un profil existant permettra de sélectionner ce profil à l\'avenir.</string>
+    <string name="profile_select">Choix du profil</string>
 
     <!-- Connection override toggles (not all are used at this time ) -->
     <string name="possibleButtons">Boutons disponibles</string>
@@ -1100,6 +1125,7 @@
     <string name="unlock_menu_unlock_summary">Déverrouillage de l\'écran en appuyant sur le bouton Menu</string>
     <string name="unlock_quick_unlock_control_title">Déverrouillage rapide</string>
     <string name="unlock_quick_unlock_control_summary">Evite d\'appuyer sur OK lors de la saisie du code PIN ou du mot de passe.\nAttention : effacer compte comme un essai raté !</string>
+    <string name="lockpattern_settings_enable_lock_before_unlock">Afficher les widgets avant le déverrouillage</string>
 
     <!-- Delays and timeouts -->
     <string name="delay_and_timeout_title">Délai de verrouillage</string>
@@ -1107,6 +1133,7 @@
     <string name="slide_lock_delay_title">Modifier les délais</string>
     <string name="slide_lock_timeout_delay_title">Timeout écran</string>
     <string name="slide_lock_screenoff_delay_title">Extinction manuelle</string>
+    <string name="slide_lock_delay_none">Immédiatement</string>
 
     <!-- Location Services -->
     <string name="location_gps_source_title">Source GPS</string>
@@ -1118,7 +1145,6 @@
     <string name="adb_over_network">ADB sur TCP/IP</string>
     <string name="adb_over_network_summary">"Activer le débogage sur toutes les interfaces (réseaux USB, Wi-Fi et Bluetooth)"</string>
     <string name="adb_over_network_warning">"ATTENTION: Lorsque cette fonction est activée, votre téléphone est ouvert aux intrusions sur toutes les interfaces, y compris via le réseau mobile !\n\nIl est fortement conseillé de désactiver le réseau mobile avant d\'activer cette fonction.\n\nContinuer ?"</string>
-    <!-- Setting checkbox title for root access -->
     <string name="root_access">Accès root</string>
     <string name="root_access_warning_title">Autoriser l\'accès root ?</string>
     <string name="root_access_warning_message">Autoriser l\'accès root aux applications peut être très dangereux et corrompre la sécurité et la stabilité de votre appareil !</string>
@@ -1126,7 +1152,7 @@
     <string name="root_access_apps">Appli. uniquement</string>
     <string name="root_access_adb">ADB uniquement</string>
     <string name="root_access_all">Applications et ADB</string>
-
+    <string name="device_hostname">Nom d\'hôte de l\'appareil</string>
     <string name="kill_app_longpress_back">Tuer avec bouton Retour</string>
     <string name="kill_app_longpress_back_summary">Permet de forcer la fermeture de l\'application en cours en appuyant longuement sur le bouton Retour</string>
 

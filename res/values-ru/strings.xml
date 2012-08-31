@@ -294,7 +294,6 @@
     <string name="show_owner_info_on_lockscreen_label" msgid="5074906168357568434">"Показывать данные о владельце на экране блокировки"</string>
     <string name="owner_info_settings_title" msgid="2723190010708381889">"Сведения о владельце"</string>
     <string name="owner_info_settings_summary">Данные о владельце на экране блокировки</string>
-    <string name="owner_info_settings_enabled">Включено</string>
     <string name="owner_info_settings_edit_text_hint" msgid="4608681417960923911">"Введите текст для показа на экране блокировки"</string>
     <string name="location_settings_title" msgid="8935806698251432196">"Мое местоположение"</string>
     <string name="security_settings_title" msgid="7945465324818485460">"Безопасность"</string>
@@ -580,7 +579,6 @@
     <string name="wifi_p2p_menu_search" msgid="7189970585393813135">"Поиск"</string>
     <string name="wifi_p2p_menu_create_group" msgid="7595229161883902082">"Создать группу"</string>
     <string name="wifi_p2p_menu_remove_group" msgid="4844634506540667517">"Удалить группу"</string>
-    <string name="wifi_p2p_menu_advanced" msgid="2578792521809265949">"Дополнительно"</string>
     <string name="wifi_p2p_available_devices" msgid="5943352520059654483">"Список"</string>
     <string name="wifi_p2p_on_summary">Вкл. Wi-Fi Direct</string>
     <string name="wifi_p2p_settings">Настройки Wi-Fi Direct</string>
@@ -678,7 +676,6 @@
     <string name="automatic_brightness" msgid="5014143533884135461">"Автонастройка"</string>
     <string name="title_font_size" msgid="4405544325522105222">"Размер шрифта"</string>
     <string name="dialog_title_font_size" msgid="2231507851258955038">"Размер шрифта"</string>
-<string name="battery_pulse_title">Индикация низкого заряда батареи</string>
     <string name="sim_lock_settings" msgid="3392331196873564292">"Настройки блокировки SIM-карты"</string>
     <string name="sim_lock_settings_category" msgid="5136244267576697004">"Настроить блокировку"</string>
     <string name="sim_lock_settings_title" msgid="9018585580955414596">"Блокировка SIM-карты"</string>
@@ -1648,6 +1645,14 @@
     <string name="stubbed">Временная заглушка</string>
     <string name="stubbed_summary">Временная заглушка до добавления функционала</string>
 
+    <!-- Battery light settings #CM -->
+    <string name="battery_light_title">Индикация батареи</string>
+    <string name="battery_low_pulse_title">Индикация разрядки батареи</string>
+    <string name="battery_light_list_title">Цвета</string>
+    <string name="battery_light_low_color_title">Батарея разряжена</string>
+    <string name="battery_light_medium_color_title">Заряжается</string>
+    <string name="battery_light_full_color_title">Полностью заряжена</string>
+
     <!-- Backlight #CM -->
     <string name="backlight_title">Автоматическая подсветка</string>
     <string name="backlight_summary">Тонкая настройка уровней и фильтрации</string>
@@ -1761,13 +1766,9 @@
     <!-- Power Widget #CM -->
     <string name="power_widget_title">Кнопки в панели уведомлений</string>
     <string name="title_expanded_widget">Кнопки в панели уведомлений</string>
-    <string name="summary_expanded_widget">Показывать виджет с кнопка в выпадающей панели уведомлений</string>
     <string name="title_expanded_hide_onchange">Скрывать при изменении</string>
-    <string name="summary_expanded_hide_onchange">Скрывать выпадающую панель после нажатия любой кнопки виджета</string>
     <string name="title_expanded_hide_indicator">Скрыть индикатор</string>
-    <string name="summary_expanded_hide_indicator">Скрыть индикаторы кнопок в панели уведомлений</string>
     <string name="title_expanded_hide_scrollbar">Скрывать полосу прокрутки</string>
-    <string name="summary_expanded_hide_scrollbar">Скрывать полосу прокрутки, когда присутствует больше максимально возможных кнопок в панели</string>
     <string name="title_widget_picker">Кнопки виджета</string>
     <string name="summary_widget_picker">Выберите кнопки, которые будут отображаться на этом виджете</string>
     <string name="title_widget_order">Упорядочить кнопки виджета</string>
@@ -1799,9 +1800,7 @@
     <string name="cm_brightness_mode_auto">Авто</string>
     <string name="cm_brightness_mode_dim">Тусклый</string>
     <string name="pref_network_mode_title">Режимы сети (2G/3G)</string>
-    <string name="pref_network_mode_summary">Укажите, какие режимы сети будут меняться кнопкой "2G/3G"</string>
     <string name="pref_screentimeout_mode_title">Режимы откл. экрана</string>
-    <string name="pref_screentimeout_mode_summary">Укажите, какие режимы отключения экрана будут меняться кнопкой "Задержка выкл. экрана"</string>
     <string name="pref_ring_mode_title">Режимы звука</string>
     <string name="pref_ring_mode_summary">Укажите, какие режимы будут меняться кнопкой "Звук"</string>
     <string name="cm_sound_mode_silent">Беззвучный</string>
@@ -1809,13 +1808,9 @@
     <string name="cm_sound_mode_sound">Звук</string>
     <string name="cm_sound_mode_soundVibrate">Звук+Вибро</string>
     <string name="pref_flash_mode_title">Режимы фонарика</string>
-    <string name="pref_flash_mode_summary">Яркий/Луч смерти</string>
-    <string name="toggles_not_enough_space">Место ограничено 6-ю переключателями</string>
-
 
     <!-- Power Widget, Haptic feedback #CM -->
     <string name="expanded_haptic_feedback_title">Отклик на нажатие</string>
-    <string name="expanded_haptic_feedback_summary">Вкл/Выкл отклик на нажатие</string>
 
     <!-- Status bar #CM -->
     <string name="status_bar_title">Строка состояния</string>
@@ -2185,11 +2180,15 @@
     <string name="profile_write_failed">Записать тег не удалось!</string>
     <string name="profile_selected">Выбран профиль: %1$s</string>
     <string name="profile_nfc_text">Запись NFC тега для профиля позволит прикосновением к тегу выбрать нужный профиль. При повторном нажатии будет выбран ранее используемый профиль.</string>
+    <string name="profile_unknown_nfc_tag">Неизвестный профиль</string>
+    <string name="profile_add_nfc_text">Этот NFC тег присвоен неизвестному профилю. Назначение этого NFC тега к существующему профилю позволит использовать его в будущем.</string>
+    <string name="profile_select">Выберите профиль</string>
+
 
     <!-- UI debug setting: kill app long-press back [CHAR LIMIT=25] -->
-    <string name="kill_app_longpress_back">Закрытие приложений</string>
+    <string name="kill_app_longpress_back">Закрытие приложения</string>
     <!-- UI debug settting: kill app long-press back [CHAR LIMIT=50] -->
-    <string name="kill_app_longpress_back_summary">Долгое нажатие Назад закрывает запущенные приложения</string>
+    <string name="kill_app_longpress_back_summary">Долгое нажатие кнопки Назад закроет запущенное приложение</string>
 
     <!-- GPS Source selection -->
     <string name="location_gps_source_title">Источники GPS</string>
@@ -2244,4 +2243,19 @@
     <!-- Status bar notification count -->
     <string name="status_bar_notif_count_title">Счётчик уведомлений</string>
     <string name="status_bar_notif_count_summary">Показывать количество новых уведомлений в строке состояния</string>
+
+    <string name="increasing_ring_title">Возрастающая громкость звонка</string>
+    <!-- Sound settings screen, the caption of the checkbox for making incoming calls increase in volume -->
+    <string name="checkbox_increasing_ring">Включить</string>
+    <!-- Sound settings screen, the title of the volume bar to adjust the minimum increasing ring volume -->
+    <string name="increasing_ring_min_volume_title">Начальная громкость звонка</string>
+    <string name="increasing_ring_volume_notice">Примечание:\nЕсли стартовая громкость рингтона выше установленной громкости звонка, рингтон будет воспроизведён на громкости, установленной в системе.</string>
+    <string name="increasing_ring_interval_title">Интервал увеличения</string>
+    <string name="increasing_ring_interval_eachring">При каждом гудке</string>
+    <string name="increasing_ring_interval_half_second">0.5 секунды</string>
+    <string name="increasing_ring_interval_1second">1 секунда</string>
+    <string name="increasing_ring_interval_2seconds">2 секунды</string>
+    <string name="increasing_ring_interval_3seconds">3 секунды</string>
+    <string name="increasing_ring_interval_5seconds">5 секунд</string>
+    <string name="increasing_ring_interval_10seconds">10 секунд</string>
 </resources>

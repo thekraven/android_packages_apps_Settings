@@ -618,7 +618,6 @@
     <string name="wifi_p2p_menu_search" msgid="7189970585393813135">"Zoeken"</string>
     <string name="wifi_p2p_menu_create_group" msgid="7595229161883902082">"Groep maken"</string>
     <string name="wifi_p2p_menu_remove_group" msgid="4844634506540667517">"Groep verwijderen"</string>
-    <string name="wifi_p2p_menu_advanced" msgid="2578792521809265949">"Geavanceerd"</string>
     <string name="wifi_p2p_available_devices" msgid="5943352520059654483">"Beschikbare apparaten"</string>
     <string name="wifi_p2p_on_summary">Wi-Fi Direct inschakelen</string>
     <string name="wifi_p2p_settings">Wi-Fi Direct-instellingen</string>
@@ -1034,7 +1033,7 @@
     <string name="applications_settings_summary" msgid="6683465446264515367">"Apps beheren, sneltoetsen voor snelstarten instellen"</string>
     <string name="applications_settings_header" msgid="1014813055054356646">"App-instellingen"</string>
     <string name="install_applications" msgid="4872012136210802181">"Onbekende bronnen"</string>
-    <string name="install_unknown_applications" msgid="8149117044297868948">"Installatie van andere apps dan Market-apps toestaan"</string>
+    <string name="install_unknown_applications" msgid="8149117044297868948">"Installatie van andere apps dan Play Store-apps toestaan"</string>
     <string name="install_all_warning" product="tablet" msgid="3263360446508268880">"Uw tablet en persoonlijke gegevens zijn gevoeliger voor aanvallen door apps van onbekende bronnen. U gaat ermee akkoord dat alleen u verantwoordelijk bent voor enige schade aan uw tablet of verlies van gegevens die voortkomen uit het gebruik van deze apps."</string>
     <string name="install_all_warning" product="default" msgid="8113734576826384682">"Uw telefoon en persoonlijke gegevens zijn gevoeliger voor aanvallen door apps van onbekende bronnen. U gaat ermee akkoord dat alleen u verantwoordelijk bent voor enige schade aan uw telefoon of verlies van gegevens die voortkomen uit het gebruik van deze apps."</string>
     <string name="advanced_settings" msgid="1777249286757067969">"Geavanceerde instellingen"</string>
@@ -1221,8 +1220,6 @@
     <string name="adb_over_network">ADB over netwerk</string>
     <string name="adb_over_network_summary">TCP/IP-foutopsporing over netwerkinterfaces (Wi-Fi, USB-netwerken) inschakelen. Deze instelling wordt hersteld na herstarten</string>
     <string name="adb_over_network_warning">WAARSCHUWING: Wanneer ADB over netwerk is ingeschakeld, is inbraak in uw telefoon mogelijk op alle verbonden netwerken, inclusief uw GSM-verbinding!\n\nGebruik deze optie enkel als u met een betrouwbaar netwerk bent verbonden.\n\nWeet u zeker dat u deze optie wilt inschakelen?</string>
-    <string name="adb_notify">USB-foutopsporingsmelding</string>
-    <string name="adb_notify_summary">Toon melding indien u een USB-verbinding met foutopsporing ingeschakeld heeft</string>
     <string name="verifier_device_identifier" msgid="5079997701152411060">"Apparaat-id voor ontwikkeling"</string>
     <string name="verifier_device_identifier_not_available" msgid="1272065992066977324">"Apparaatgegevens niet beschikbaar"</string>
     <string name="keep_screen_on" msgid="1146389631208760344">"Actief houden"</string>
@@ -1269,7 +1266,7 @@
     <string name="accessibility_service_disable_warning_summary" msgid="625013894287895398">"Als u \'OK\' aanraakt, wordt <xliff:g id="SERVICE">%1$s</xliff:g> beëindigd."</string>
     <string name="accessibility_no_services_installed" msgid="7200948194639038807">"Geen services geïnstalleerd"</string>
     <string name="accessibility_service_no_apps_title" msgid="5124097563864109821">"Heeft u een schermlezer nodig?"</string>
-    <string name="accessibility_service_no_apps_message" msgid="7751662416377046539">"TalkBack levert gesproken feedback om blinde en slechtziende gebruikers te helpen navigeren. Wilt u deze app gratis installeren via Android Market?"</string>
+    <string name="accessibility_service_no_apps_message" msgid="7751662416377046539">"TalkBack levert gesproken feedback om blinde en slechtziende gebruikers te helpen navigeren. Wilt u deze app gratis installeren via de Play Store?"</string>
     <string name="accessibility_script_injection_security_warning_title" msgid="4158946557435736650">"Webscripts installeren?"</string>
     <string name="accessibility_script_injection_security_warning_summary" msgid="7706858873495386310">"Wilt u dat apps scripts installeren van Google waardoor de webinhoud van de apps toegankelijker wordt?"</string>
     <string name="accessibility_touch_exploration_warning" msgid="2442154805472989569">"Deze functie past de manier aan waarop uw apparaat reageert op aanraking. Inschakelen?"</string>
@@ -1685,7 +1682,7 @@
     <!-- Interface settings - System -->
     <string name="system_interface_title">Systeemuiterlijk</string>
     <!-- Notification Drawer -->
-    <string name="notification_drawer_title">Notificatiedrawer</string>
+    <string name="notification_drawer_title">Notificatiepaneel</string>
     <!-- Combined Bar -->
     <string name="combined_bar_title">Gecombineerde balk</string>
     <string name="combined_bar_auto_hide_title">Automatisch verbergen</string>
@@ -1701,13 +1698,9 @@
     <!-- Power Widget -->
     <string name="power_widget_title">Energiewidget</string>
     <string name="title_expanded_widget">Toon energiewidget</string>
-    <string name="summary_expanded_widget">Toon energiewidget in de notificatiedrawer</string>
     <string name="title_expanded_hide_onchange">Verberg bij veranderingen</string>
-    <string name="summary_expanded_hide_onchange">Verberg de notificatiedrawer als een widgetknop aangeraakt is</string>
     <string name="title_expanded_hide_indicator">Verberg indicator</string>
-    <string name="summary_expanded_hide_indicator">Verberg indicatoren van energiewidget</string>
     <string name="title_expanded_hide_scrollbar">Verberg schuifbalk</string>
-    <string name="summary_expanded_hide_scrollbar">Verberg de schuifbalk als het maximaal aantal widgetknoppen overschreden is</string>
     <string name="title_widget_picker">Widgetknoppen</string>
     <string name="summary_widget_picker">Selecteer welke knoppen in de energiewidget getoond moeten worden</string>
     <string name="title_widget_order">Volgorde van widgetknoppen</string>
@@ -1739,9 +1732,7 @@
     <string name="cm_brightness_mode_auto">Automatisch</string>
     <string name="cm_brightness_mode_dim">Dimmen</string>
     <string name="pref_network_mode_title">Netwerkmodi</string>
-    <string name="pref_network_mode_summary">Kies hoe de netwerkmodusknop modi veranderen</string>
     <string name="pref_screentimeout_mode_title">Modi schermtime-out</string>
-    <string name="pref_screentimeout_mode_summary">Kies hoe de schermtime-out-knoppen modi veranderen</string>
     <string name="pref_ring_mode_title">Geluidsmodi</string>
     <string name="pref_ring_mode_summary">Kies hoe de geluidsknop modi veranderen</string>
     <string name="cm_sound_mode_silent">Stil</string>
@@ -1749,10 +1740,10 @@
     <string name="cm_sound_mode_sound">Geluid</string>
     <string name="cm_sound_mode_soundVibrate">Geluid &amp; trillen</string>
     <string name="pref_flash_mode_title">Zaklampmodus</string>
-    <string name="pref_flash_mode_summary">Kies fel licht</string>
+
     <!-- Power Widget, Haptic feedback -->
     <string name="expanded_haptic_feedback_title">Haptische feedback</string>
-    <string name="expanded_haptic_feedback_summary">Schakel haptische feedback in/uit</string>
+
     <!-- Status bar -->
     <string name="status_bar_title">Statusbalk</string>
     <string name="status_bar_clock_title">Klok</string>
@@ -1796,15 +1787,12 @@
     <string name="weather_use_custom_location">Gebruik aangepaste locatie</string>
     <string name="weather_geolocated">Netwerkgebaseerde geolocatie</string>
     <string name="weather_custom_location_dialog_title">Locatie invoeren</string>
-    <string name="weather_custom_location_dialog_message">Let op: updates stoppen na het invoeren van een ongeldige locatie</string>
     <string name="weather_custom_location_hint">Stad, staat/land</string>
     <string name="weather_custom_location_title">Locatie</string>
     <string name="weather_show_location_title">Toon locatie</string>
     <string name="weather_show_timestamp_title">Toon tijd</string>
     <string name="weather_refresh_interval">Verversingsinterval</string>
-    <string name="weather_update">Bijwerken</string>
     <string name="weather_use_metric">Gebruik metrische eenheden</string>
-    <string name="weather_refreshing">Weer verversen</string>
     <string name="weather_retrieve_location_dialog_title">Kan locatie niet bepalen!</string>
     <string name="weather_retrieve_location_dialog_message">Netwerkgebaseerde geolocatie is uitgeschakeld.\n\nVoer een aangepaste locatie in of schakel netwerkgebaseerde geolocatie in</string>
     <string name="weather_retrieve_location_dialog_enable_button">Inschakelen</string>
@@ -2028,9 +2016,6 @@
     <string name="root_access_adb">Alleen via ADB</string>
     <string name="root_access_all">Apps en via ADB</string>
 
-    <!-- Battery pulse light -->
-    <string name="battery_pulse_title">Knipperend licht bij laag batterijniveau</string>
-
     <!-- Settings - Storage -->
     <!-- [CHAR LIMIT=30]-->
     <string name="storage_menu_storage">Opslagbeheer</string>
@@ -2121,22 +2106,6 @@
     <string name="profile_selected">Geselecteerd profiel: %1$s</string>
     <string name="profile_nfc_text">Een profiel naar een NFC-tag schrijven staat u toe om de tag te raken om dat profiel te kiezen. Een tweede keer raken zal het vorig gekozen profiel selecteren.</string>
 
-    <!-- Display Settings : Render effect -->
-    <string name="pref_render_effect_title">Rendereffect</string>
-    <string name="pref_render_effect_summary">Door het scherm te gebruiken kleuren kiezen</string>
-
-    <string name="pref_render_effect_none">Geen rendereffect</string>
-    <string name="pref_render_effect_night">Nachtmodus (3700K)</string>
-    <string name="pref_render_effect_green">Terminal (groen)</string>
-    <string name="pref_render_effect_blue">Blauw</string>
-    <string name="pref_render_effect_amber">Amber</string>
-    <string name="pref_render_effect_salmon">Zalm</string>
-    <string name="pref_render_effect_fuscia">Fuchsia</string>
-    <string name="pref_render_effect_calibrated">Gekalibreerd (N1)</string>
-    <string name="pref_render_effect_calibrated_red">Gekalibreerd (N1) laag rood</string>
-    <string name="pref_render_effect_calibrated_cool">Gekalibreerd (N1) koud</string>
-    <string name="pref_render_effect_red">Rood</string>
-
     <!-- Display - Rotation -->
     <string name="display_rotation_title">Rotatie</string>
     <string name="display_rotation_enabled">Ingeschakeld</string>
@@ -2151,4 +2120,36 @@
     <!-- Preference Stub -->
     <string name="stubbed">Voorkeursopvulling</string>
     <string name="stubbed_summary">Tijdelijk opgevuld totdat functionaliteit is toegevoegd</string>
+
+    <string name="weather_progress_title">Locatie controleren</string>
+    <string name="lockscreen_custom_background_title">Achtergrond</string>
+    <string name="lockscreen_custom_background_dialog_title">Kleur kiezen</string>
+    <string name="lockscreen_background_result_successful">Achtergrond gewijzigd</string>
+    <string name="lockscreen_background_result_not_successful">Achtergrond niet gewijzigd</string>
+    <string name="lockscreen_background_color_fill">Vullen met een kleur</string>
+    <string name="lockscreen_background_custom_image">Aangepaste afbeelding</string>
+    <string name="lockscreen_background_default_wallpaper">Standaardachtergrond</string>
+    <string name="font_size_preview_text">Bas wil zelf gympjes kopen van de extra cheque.</string>
+    <string name="intent_sender_data_label"><xliff:g id="data">Gegevens:</xliff:g></string>
+    <string name="intent_sender_action_label"><xliff:g id="action">Actie</xliff:g>:</string>
+    <string name="tethering_advanced_text">Geavanceerd</string>
+    <string name="tethering_lease_time_text">DHCP-leasetijd</string>
+    <string name="dhcp_lease_30mn">30 minuten</string>
+    <string name="dhcp_lease_1h">1 uur (standaard)</string>
+    <string name="dhcp_lease_2h">2 uur</string>
+    <string name="dhcp_lease_4h">4 uur</string>
+    <string name="dhcp_lease_6h">6 uur</string>
+    <string name="dhcp_lease_12h">12 uur</string>
+    <string name="dhcp_lease_24h">1 dag</string>
+    <string name="lockpattern_settings_enable_lock_before_unlock">Widgets tonen voor ontgrendeling</string>
+    <string name="ime_switcher_notify">Invoermethodemelding</string>
+    <string name="ime_switcher_notify_summary">Melding tonen voor wijzigen invoermethode</string>
+    <string name="testing_sim_toolkit">Simtoolkit</string>
+    <string name="display_category_animation_options_title">Animatie</string>
+    <string name="display_electron_beam_animation_on_title">Animatie bij scherm aan</string>
+    <string name="display_electron_beam_animation_off_title">Animatie bij scherm uit</string>
+    <string name="stylus_icon_enabled_summary">Cursor tonen indien met een stylus wordt getekend</string>
+    <string name="device_hostname">Hostnaam apparaat</string>
+    <string name="status_bar_notif_count_title">Meldingsaantal tonen</string>
+    <string name="status_bar_notif_count_summary">Aantal aanwezige meldingen tonen op de statusbalk</string>
 </resources>
