@@ -16,6 +16,8 @@
 
 package com.android.settings.cyanogenmod;
 
+import java.io.IOException;
+
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -46,6 +48,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String COMBINED_BAR_AUTO_HIDE = "combined_bar_auto_hide";
 
     private static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
+	
+    private static final String STATUSBAR_TRANSPARENCY = "statusbar_transparency";
 
     private static final String STATUS_BAR_CATEGORY_GENERAL = "status_bar_general";
 
@@ -62,6 +66,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private CheckBoxPreference mCombinedBarAutoHide;
 
     private CheckBoxPreference mStatusBarNotifCount;
+	
+	private ListPreference mStatusbarTransparency;
 
     private PreferenceCategory mPrefCategoryGeneral;
 
@@ -129,6 +135,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarNotifCount.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1));
 
+		mStatusbarTransparency = (ListPreference) findPreference(STATUSBAR_TRANSPARENCY);
+        mStatusbarTransparency.setOnPreferenceChangeListener(this);
+        mStatusbarTransparency.setValue(Integer.toString(Settings.System.getInt(getActivity()
+		        .getContentResolver(), Settings.System.STATUSBAR_TRANSPARENCY,
+		        100)));	
+		
         mPrefCategoryGeneral = (PreferenceCategory) findPreference(STATUS_BAR_CATEGORY_GENERAL);
 
         if (Utils.isScreenLarge()) {
@@ -161,6 +173,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_SIGNAL_TEXT, signalStyle);
             return true;
+        } else if (preference == mStatusbarTransparency) {
+		    int val = Integer.parseInt((String) newValue);
+		    Settings.System.putInt(getActivity().getContentResolver(),
+		            Settings.System.STATUSBAR_TRANSPARENCY, val);
+		    restartSystemUI();
+		    return true;
         }
         return false;
     }
@@ -184,5 +202,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             return true;
         }
         return false;
+    }
+	
+    private void restartSystemUI() {
+	    try {
+	        Runtime.getRuntime().exec("pkill -TERM -f com.android.systemui");
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
     }
 }
