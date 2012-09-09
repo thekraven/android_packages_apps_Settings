@@ -65,6 +65,8 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
     private ListPreference mStylePref;
     private Preference mWeatherPref;
     private Preference mCalendarPref;
+    private ListPreference mBatteryStatus;
+    private ListPreference mClockAlign;
     private Activity mActivity;
     ContentResolver mResolver;
 
@@ -324,6 +326,12 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_STYLE, value);
             mStylePref.setSummary(mStylePref.getEntries()[value]);
+            return true;
+        } else if (preference == mClockAlign) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
+            mClockAlign.setSummary(mClockAlign.getEntries()[value]);
             return true;
         }
         return false;

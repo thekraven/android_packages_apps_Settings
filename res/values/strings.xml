@@ -4087,6 +4087,10 @@ found in the list of installed apps.</string>
     <string name="sync_disabled">Sync is OFF</string>
     <!-- Sync status shown when last sync resulted in an error [CHAR LIMIT=25] -->
     <string name="sync_error">Sync error</string>
+    <string name="lockscreen_clock_align_title">Clock alignment</string>
+    <string name="lockscreen_clock_align_left">Left</string>
+    <string name="lockscreen_clock_align_center">Center</string>
+    <string name="lockscreen_clock_align_right">Right</string>
 
     <!-- Data synchronization settings screen, setting option name -->
     <string name="settings_backup">Back up settings</string>
