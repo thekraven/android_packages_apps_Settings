@@ -38,8 +38,13 @@
                 android:title="@string/accessibility_power_button_ends_call_title"
                 android:persistent="false"
                 android:order="2"/>
-
+				
         <CheckBoxPreference
+		        android:key="toggle_home_button_answers_call_preference" 
+                android:title="@string/accessibility_home_button_answers_call_title" 
+                android:persistent="false"/> 
+ 
+        <CheckBoxPreference 
                 android:key="toggle_auto_rotate_screen_preference"
                 android:title="@string/accelerometer_title"
                 android:persistent="false"
