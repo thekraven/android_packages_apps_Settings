@@ -23,7 +23,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -43,10 +42,8 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     private static final String KEY_NOTIFICATION_DRAWER_TABLET = "notification_drawer_tablet";
     private static final String KEY_NAVIGATION_BAR = "navigation_bar";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
-	private static final String KONSTA_NAVBAR = "konsta_navbar";
 
     private ListPreference mFontSizePref;
-	private CheckBoxPreference mKonstaNavbar;
 
     private final Configuration mCurConfig = new Configuration();
     
@@ -72,10 +69,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
             }
         } catch (RemoteException e) {
         }
-			
-        mKonstaNavbar = (CheckBoxPreference) findPreference(KONSTA_NAVBAR);
-        mKonstaNavbar.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.KONSTA_NAVBAR, 0) == 1);	
+
     }
 
     int floatToIndex(float val) {
@@ -136,11 +130,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mKonstaNavbar) {
-            Settings.System.putInt(getContentResolver(), Settings.System.KONSTA_NAVBAR,
-                    mKonstaNavbar.isChecked() ? 1 : 0);
-            return true;
-        }
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
