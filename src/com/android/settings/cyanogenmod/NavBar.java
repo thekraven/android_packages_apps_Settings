@@ -16,36 +16,84 @@
 
 package com.android.settings.cyanogenmod;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
+import android.app.ListFragment;
+import android.appwidget.AppWidgetHost;
+import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetProviderInfo;
+import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.PowerManager;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.view.View.OnClickListener;
+
+import android.util.Log;
+import android.util.TypedValue;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceGroup;
+import android.preference.PreferenceScreen;
+import android.preference.PreferenceCategory;
+import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settings.R;
+
 import com.android.settings.Utils;
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 
-public class NavBar extends Fragment {
+
+
+public class NavBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private boolean mEditMode;
     private ViewGroup mContainer;
     private Activity mActivity;
+	private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
     private final static Intent mIntent = new Intent("android.intent.action.NAVBAR_EDIT");
     private static final int MENU_RESET = Menu.FIRST;
     private static final int MENU_EDIT = Menu.FIRST + 1;
 	private static final String NAV_BAR_TRANSPARENCY = "nav_bar_transparency";
+	public static final String PREFS_NAV_BAR = "navbar";
 	
 	ListPreference mNavigationBarTransparency;
 	
@@ -54,16 +102,16 @@ public class NavBar extends Fragment {
 	    super.onCreate(savedInstanceState);
 	    // Load the preferences from an XML resource
 	
-        mNavigationBarTransparency = (ListPreference) findPreference(NAV_BAR_TRANSPARENCY); 
-        int navBarTransparency = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(), 
-                Settings.System.NAV_BAR_TRANSPARENCY, 100); 
-        mNavigationBarTransparency.setValue(String.valueOf(navBarTransparency)); 
-        mNavigationBarTransparency.setOnPreferenceChangeListener(this); 
-		
-		if (mTablet) {
-    		prefs.removePreference(mNavigationBarTransparency);
-            prefs.removePreference(mNavBarMenuDisplay);
-		}
+        mNavigationBarTransparency = (ListPreference) findPreference(NAV_BAR_TRANSPARENCY);
+ 		mNavigationBarTransparency.setOnPreferenceChangeListener(this);
+        mNavigationBarTransparency.setValue(Integer.toString(Settings.System.getInt(getActivity() 
+            .getContentResolver(), Settings.System.NAV_BAR_TRANSPARENCY, 
+            100)));		
+         		
+	//	if (mTablet) {
+    	//	prefs.removePreference(mNavigationBarTransparency);
+        //    prefs.removePreference(mNavBarMenuDisplay);
+		//}
 		
 	}	
 
@@ -150,18 +198,14 @@ public class NavBar extends Fragment {
         }
     }
 
-	@Override    
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
 	    if (preference == mNavigationBarTransparency) { 
-            int navBarTransparency = Integer.valueOf((String) newValue); 
+            int val = Integer.parseInt((String) newValue); 
             Settings.System.putInt(getActivity().getContentResolver(), 
-                    Settings.System.NAV_BAR_TRANSPARENCY, navBarTransparency); 
+                    Settings.System.NAV_BAR_TRANSPARENCY, val); 
+			restartSystemUI(); 		
             return true; 
-        } else if (preference == menuDisplayLocation) { 
-		    Settings.System.putInt(getActivity().getContentResolver(),
-			    Settings.System.MENU_LOCATION, Integer.parseInt((String) newValue));
-            return true;
-			
+
 		}
 		return false;
 	}
@@ -183,4 +227,12 @@ public class NavBar extends Fragment {
         toggleEditMode(false, false);
         super.onDestroy();
     }
+	 
+	private void restartSystemUI() {
+	          try {
+	              Runtime.getRuntime().exec("pkill -TERM -f com.android.systemui");
+	          } catch (IOException e) {
+	              e.printStackTrace();
+	          }    
+	}
 }

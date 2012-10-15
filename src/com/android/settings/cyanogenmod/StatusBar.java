@@ -136,13 +136,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                 Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1));
 
 		mStatusbarTransparency = (ListPreference) findPreference(STATUS_BAR_TRANSPARENCY);
-		int statusBarTransparency = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(), 
-                Settings.System.STATUS_BAR_TRANSPARENCY, 100); 
-		mStatusbarTransparency.setValue(String.valueOf(statusBarTransparency));		
+		//int statusBarTransparency = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(), 
+        //        Settings.System.STATUS_BAR_TRANSPARENCY, 100); 
+		//mStatusbarTransparency.setValue(String.valueOf(statusBarTransparency));		
         mStatusbarTransparency.setOnPreferenceChangeListener(this);
-        //mStatusbarTransparency.setValue(Integer.toString(Settings.System.getInt(getActivity()
-		 //       .getContentResolver(), Settings.System.STATUSBAR_TRANSPARENCY,
-		 //       100)));	
+        mStatusbarTransparency.setValue(Integer.toString(Settings.System.getInt(getActivity()
+		       .getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENCY,
+		       100)));	
 		
         mPrefCategoryGeneral = (PreferenceCategory) findPreference(STATUS_BAR_CATEGORY_GENERAL);
 
@@ -176,20 +176,20 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_SIGNAL_TEXT, signalStyle);
             return true;
-        //} else if (preference == mStatusbarTransparency) {
-		//    int val = Integer.parseInt((String) newValue);
-		//    Settings.System.putInt(getActivity().getContentResolver(),
-		//            Settings.System.STATUSBAR_TRANSPARENCY, val);
-		//    restartSystemUI();
-		//    return true;
+        } else if (preference == mStatusbarTransparency) {
+		    int val = Integer.parseInt((String) newValue);
+		    Settings.System.putInt(getActivity().getContentResolver(),
+		            Settings.System.STATUS_BAR_TRANSPARENCY, val);
+		    restartSystemUI();
+		    return true;
         
 		
-		} else if (preference == mStatusbarTransparency) { 
-            int statusBarTransparency = Integer.valueOf((String) newValue); 
-            result = Settings.System.putInt(getActivity().getContentResolver(), 
-                    Settings.System.STATUS_BAR_TRANSPARENCY, statusBarTransparency);
-            restartSystemUI();
-		    return true;
+		//} else if (preference == mStatusbarTransparency) { 
+          //  int statusBarTransparency = Integer.valueOf((String) newValue); 
+            //result = Settings.System.putInt(getActivity().getContentResolver(), 
+              //      Settings.System.STATUS_BAR_TRANSPARENCY, statusBarTransparency);
+            //restartSystemUI();
+		    //return true;
         }					
 
         return false;
