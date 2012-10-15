@@ -31,6 +31,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 
 import com.android.settings.R;
 import com.android.settings.Utils;
@@ -43,6 +45,27 @@ public class NavBar extends Fragment {
     private final static Intent mIntent = new Intent("android.intent.action.NAVBAR_EDIT");
     private static final int MENU_RESET = Menu.FIRST;
     private static final int MENU_EDIT = Menu.FIRST + 1;
+	private static final String NAV_BAR_TRANSPARENCY = "nav_bar_transparency";
+	
+	ListPreference mNavigationBarTransparency;
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+	    super.onCreate(savedInstanceState);
+	    // Load the preferences from an XML resource
+	
+        mNavigationBarTransparency = (ListPreference) findPreference(NAV_BAR_TRANSPARENCY); 
+        int navBarTransparency = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(), 
+                Settings.System.NAV_BAR_TRANSPARENCY, 100); 
+        mNavigationBarTransparency.setValue(String.valueOf(navBarTransparency)); 
+        mNavigationBarTransparency.setOnPreferenceChangeListener(this); 
+		
+		if (mTablet) {
+    		prefs.removePreference(mNavigationBarTransparency);
+            prefs.removePreference(mNavBarMenuDisplay);
+		}
+		
+	}	
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -127,6 +150,22 @@ public class NavBar extends Fragment {
         }
     }
 
+	@Override    
+	public boolean onPreferenceChange(Preference preference, Object newValue) {
+	    if (preference == mNavigationBarTransparency) { 
+            int navBarTransparency = Integer.valueOf((String) newValue); 
+            Settings.System.putInt(getActivity().getContentResolver(), 
+                    Settings.System.NAV_BAR_TRANSPARENCY, navBarTransparency); 
+            return true; 
+        } else if (preference == menuDisplayLocation) { 
+		    Settings.System.putInt(getActivity().getContentResolver(),
+			    Settings.System.MENU_LOCATION, Integer.parseInt((String) newValue));
+            return true;
+			
+		}
+		return false;
+	}
+	
     @Override
     public void onPause() {
         toggleEditMode(false, false);

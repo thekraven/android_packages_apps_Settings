@@ -62,5 +62,13 @@
         android:title="@string/konsta_navbar"
         android:summary="@string/konsta_navbar_reboot"
         android:defaultValue="false" />	
+		
+	
+    <ListPreference 
+        android:key="nav_bar_transparency" 
+        android:title="@string/navigation_bar_transparency_title" 
+        android:summary="@string/navigation_bar_transparency_summary" 
+        android:entries="@array/entries_transparency" 
+        android:entryValues="@array/values_transparency"/> 
 
 </PreferenceScreen>

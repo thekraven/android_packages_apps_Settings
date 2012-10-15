@@ -1299,15 +1299,15 @@
     </string-array>
 	
     <!--- Status bar transparency -->
-    <string-array name="statusbar_transparency_entries">
-		<item>@string/statusbar_transparency_no</item>
-        <item>@string/statusbar_transparency_25</item>
-        <item>@string/statusbar_transparency_50</item>
-        <item>@string/statusbar_transparency_75</item>
-        <item>@string/statusbar_transparency_full</item>
+    <string-array name="entries_transparency">
+		<item>0%</item>
+        <item>25%</item>
+        <item>50%</item>
+        <item>75%</item>
+        <item>100%</item>
 	</string-array>
 
-    <string-array name="statusbar_transparency_values">
+    <string-array name="values_transparency">
 		<item>100</item>
         <item>75</item>
         <item>50</item>
