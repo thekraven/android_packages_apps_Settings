@@ -63,4 +63,12 @@
         android:summary="@string/konsta_navbar_reboot"
         android:defaultValue="false" />	
 
+
+    <ListPreference 
+       android:key="recent_app_switcher" 
+       android:title="@string/recent_app_switcher_title" 
+       android:summary="@string/recent_app_switcher_summary" 
+       android:entries="@array/recent_app_switcher_entries" 
+       android:entryValues="@array/recent_app_switcher_values" /> 
+		
 </PreferenceScreen>

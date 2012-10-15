@@ -4544,6 +4544,10 @@ found in the list of installed apps.</string>
     <string name="konsta_navbar_dialog_negative">Reboot later</string>
     <string name="konsta_navbar_dialog_positive">Hot reboot now</string>  -->
 	
+    <string name="recent_app_switcher_title">Recents window style</string> 
+    <string name="recent_app_switcher_summary">Change the recents window style (requires UI restart)</string> 
+	
+	
 	<!-- Category for notification light options --> 
    <string name="notification_light_title">Notification light options</string> 
 

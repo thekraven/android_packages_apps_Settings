@@ -15,6 +15,8 @@
  */
 
 package com.android.settings.cyanogenmod;
+import java.io.File;
+import java.util.ArrayList;
 
 import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
@@ -24,12 +26,16 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
+import android.os.SystemProperties;
 import android.os.ServiceManager;
 import android.os.IBinder;
 import android.os.IPowerManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -49,9 +55,11 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     private static final String KEY_NAVIGATION_BAR = "navigation_bar";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
 	private static final String KONSTA_NAVBAR = "konsta_navbar";
+	private static final String PREF_RECENT_APP_SWITCHER = "recent_app_switcher";
 
     private ListPreference mFontSizePref;
 	private CheckBoxPreference mKonstaNavbar;
+	ListPreference mRecentAppSwitcher;
 
     private final Configuration mCurConfig = new Configuration();
     
@@ -81,6 +89,13 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 		mKonstaNavbar = (CheckBoxPreference) findPreference(KONSTA_NAVBAR);
         mKonstaNavbar.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
 		    Settings.System.KONSTA_NAVBAR, 0) == 1);
+			
+        mRecentAppSwitcher = (ListPreference) findPreference(PREF_RECENT_APP_SWITCHER); 
+        mRecentAppSwitcher.setOnPreferenceChangeListener(this); 
+        mRecentAppSwitcher.setValue(Integer.toString(Settings.System.getInt(getActivity() 
+                .getContentResolver(), Settings.System.RECENT_APP_SWITCHER, 
+                0))); 
+			
 
     }
 
@@ -146,6 +161,8 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 		    Settings.System.putInt(getContentResolver(), Settings.System.KONSTA_NAVBAR,
 		        mKonstaNavbar.isChecked() ? 1 : 0);
 		    return true;
+
+
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -154,8 +171,14 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         final String key = preference.getKey();
         if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);
-        }
-
         return true;
-    }
+		} else if (preference == mRecentAppSwitcher) { 
+            int val = Integer.parseInt((String) objValue); 
+            Settings.System.putInt(getActivity().getContentResolver(), 
+                Settings.System.RECENT_APP_SWITCHER, val); 
+            //Helpers.restartSystemUI(); 
+        return true; 
+		}
+         return false;       
+	}	
 }
