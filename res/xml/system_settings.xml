@@ -48,27 +48,15 @@
         android:dialogTitle="@string/dialog_title_font_size" />
 
     <PreferenceScreen
-        android:key="navigation_bar"
-        android:fragment="com.android.settings.cyanogenmod.NavBar"
+        android:key="navbar_settings"
+        android:fragment="com.android.settings.cyanogenmod.Navbar"
         android:title="@string/navigation_bar_title" />
+		
 
     <PreferenceScreen
         android:key="hardware_keys"
         android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
         android:title="@string/hardware_keys_title" />
 
-	<CheckBoxPreference
-    	android:key="konsta_navbar"
-        android:title="@string/konsta_navbar"
-        android:summary="@string/konsta_navbar_reboot"
-        android:defaultValue="false" />	
-		
-	
-    <ListPreference 
-        android:key="nav_bar_transparency" 
-        android:title="@string/navigation_bar_transparency_title" 
-        android:summary="@string/navigation_bar_transparency_summary" 
-        android:entries="@array/entries_transparency" 
-        android:entryValues="@array/values_transparency"/> 
 
 </PreferenceScreen>
