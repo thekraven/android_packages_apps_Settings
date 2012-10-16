@@ -48,7 +48,7 @@
         android:dialogTitle="@string/dialog_title_font_size" />
 
     <PreferenceScreen
-        android:key="navbar_settings"
+        android:key="navigation_bar"
         android:fragment="com.android.settings.cyanogenmod.Navbar"
         android:title="@string/navigation_bar_title" />
 		
