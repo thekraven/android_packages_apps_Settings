@@ -102,7 +102,11 @@ public class NavBar extends SettingsPreferenceFragment implements OnPreferenceCh
     public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    // Load the preferences from an XML resource
-	
+		if (getPreferenceManager() != null) { 
+            addPreferencesFromResource(R.xml.navbar_settings); 
+			PreferenceScreen prefSet = getPreferenceScreen();
+
+	    }
         mNavigationBarTransparency = (ListPreference) findPreference(NAV_BAR_TRANSPARENCY);
  		mNavigationBarTransparency.setOnPreferenceChangeListener(this);
         mNavigationBarTransparency.setValue(Integer.toString(Settings.System.getInt(getActivity() 
@@ -112,7 +116,7 @@ public class NavBar extends SettingsPreferenceFragment implements OnPreferenceCh
 	//	if (mTablet) {
     	//	prefs.removePreference(mNavigationBarTransparency);
         //    prefs.removePreference(mNavBarMenuDisplay);
-		//}
+		
 		
 	}	
 
