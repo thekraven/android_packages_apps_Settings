@@ -4108,6 +4108,13 @@ found in the list of installed apps.</string>
     <string name="sync_plug"><font fgcolor="#ffffffff">Welcome to Google sync!</font>
     \nA Google approach to synchronizing data to allow access to your contacts, appointments, and more from wherever you are.
     </string>
+    <!-- Lock screen style -->
+    <string name="lockscreen_style_title">Style</string>
+    <string name="lockscreen_style_summary">Choose: Jb, ics, gb or eclair</string>
+
+    <!-- Lock screen see through -->
+    <string name="lockscreen_see_through_title">See through</string>
+    <string name="lockscreen_see_through_summary">Allows to see the activity behind the lock screen. Custom image will disable this preference.</string>
 
     <!-- Header title for those settings relating to application syncing. -->
     <string name="header_application_sync_settings">App sync settings</string>

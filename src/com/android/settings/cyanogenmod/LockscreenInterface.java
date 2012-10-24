@@ -52,6 +52,17 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public static final String KEY_CALENDAR_PREF = "lockscreen_calendar";
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private ListPreference mCustomBackground;
+    public static final String KEY_SEE_TRHOUGH_PREF = "lockscreen_see_through";
+    public static final String KEY_STYLE_PREF = "lockscreen_style";
+    private static final int LOCK_STYLE_JB = 0;  
+    private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
+    private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
+
+public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
+
+    private ListPreference mCustomBackground;
+    private CheckBoxPreference mSeeThrough;
+    private ListPreference mStylePref;
     private Preference mWeatherPref;
     private Preference mCalendarPref;
     private Activity mActivity;
@@ -60,6 +71,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private File wallpaperImage;
     private File wallpaperTemporary;
     private boolean mIsScreenLarge;
+    private boolean mUseJbLockscreen;
+    private int mLockscreenStyle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,8 +88,42 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mIsScreenLarge = Utils.isScreenLarge();
         wallpaperImage = new File(mActivity.getFilesDir()+"/lockwallpaper");
         wallpaperTemporary = new File(mActivity.getCacheDir()+"/lockwallpaper.tmp");
+
+        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH_PREF);
+        mSeeThrough.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1));
+
+        mStylePref = (ListPreference) findPreference(KEY_STYLE_PREF);
+        mStylePref.setOnPreferenceChangeListener(this);
+
+        wallpaperImage = new File(mActivity.getFilesDir()+"/lockwallpaper");
+        wallpaperTemporary = new File(mActivity.getCacheDir()+"/lockwallpaper.tmp");
+
+        mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
+        mBatteryStatus.setOnPreferenceChangeListener(this);
+
+        mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
+        mClockAlign.setOnPreferenceChangeListener(this);
+
+        mIsScreenLarge = Utils.isTablet(getActivity());
+	
+	check_lockscreentarget();
+
+
         updateCustomBackgroundSummary();
     }
+
+	private void check_lockscreentarget() {
+            mLockscreenStyle = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_STYLE, 0);
+            mUseJbLockscreen = (mLockscreenStyle == LOCK_STYLE_JB);
+            if (!mUseJbLockscreen) {
+                Preference lockTargets = findPreference(KEY_LOCKSCREEN_TARGETS);
+                if (lockTargets != null) {
+                    getPreferenceScreen().removePreference(lockTargets);
+		}
+	    }
+	}
 
     private void updateCustomBackgroundSummary() {
         int resId;
@@ -127,6 +174,35 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             } else {
                 mCalendarPref.setSummary(R.string.lockscreen_calendar_summary);
             }
+        }
+
+        // Set the battery status description text
+        if (mBatteryStatus != null) {
+            boolean batteryStatusAlwaysOn = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, 0) == 1;
+            if (batteryStatusAlwaysOn) {
+                mBatteryStatus.setValueIndex(1);
+            } else {
+                mBatteryStatus.setValueIndex(0);
+            }
+            mBatteryStatus.setSummary(mBatteryStatus.getEntry());
+        }
+
+        // Set the clock align value
+        if (mClockAlign != null) {
+            int clockAlign = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, 2);
+            mClockAlign.setValue(String.valueOf(clockAlign));
+            mClockAlign.setSummary(mClockAlign.getEntries()[clockAlign]);
+        }
+
+        // Set the style value
+        if (mStylePref != null) {
+            int stylePref = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_STYLE, 0);
+            mStylePref.setValue(String.valueOf(stylePref));
+            mStylePref.setSummary(mStylePref.getEntries()[stylePref]);
+	    check_lockscreentarget();
         }
     }
 
@@ -241,6 +317,13 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 updateCustomBackgroundSummary();
                 break;
             }
+            return true;
+
+        } else if (preference == mStylePref) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_STYLE, value);
+            mStylePref.setSummary(mStylePref.getEntries()[value]);
             return true;
         }
         return false;
