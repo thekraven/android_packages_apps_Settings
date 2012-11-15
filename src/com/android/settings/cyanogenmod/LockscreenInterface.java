@@ -60,8 +60,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
 public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
 
-    private ListPreference mCustomBackground;
-    private CheckBoxPreference mSeeThrough;
+ //   private ListPreference mCustomBackground;
+ //   private CheckBoxPreference mSeeThrough;
     private ListPreference mStylePref;
     private Preference mWeatherPref;
     private Preference mCalendarPref;
@@ -91,9 +91,9 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
         wallpaperImage = new File(mActivity.getFilesDir()+"/lockwallpaper");
         wallpaperTemporary = new File(mActivity.getCacheDir()+"/lockwallpaper.tmp");
 
-        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH_PREF);
-        mSeeThrough.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1));
+ //       mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH_PREF);
+ //       mSeeThrough.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+ //               Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1));
 
         mStylePref = (ListPreference) findPreference(KEY_STYLE_PREF);
         mStylePref.setOnPreferenceChangeListener(this);
@@ -107,7 +107,7 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
         mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
         mClockAlign.setOnPreferenceChangeListener(this);
 
-        mIsScreenLarge = Utils.isTablet(getActivity());
+//        mIsScreenLarge = Utils.isTablet(getActivity());
 	
 	check_lockscreentarget();
 
@@ -179,16 +179,16 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
         }
 
         // Set the battery status description text
-        if (mBatteryStatus != null) {
-            boolean batteryStatusAlwaysOn = Settings.System.getInt(mResolver,
-                    Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, 0) == 1;
-            if (batteryStatusAlwaysOn) {
-                mBatteryStatus.setValueIndex(1);
-            } else {
-                mBatteryStatus.setValueIndex(0);
-            }
-            mBatteryStatus.setSummary(mBatteryStatus.getEntry());
-        }
+//        if (mBatteryStatus != null) {
+//            boolean batteryStatusAlwaysOn = Settings.System.getInt(mResolver,
+//                    Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, 0) == 1;
+//            if (batteryStatusAlwaysOn) {
+//                mBatteryStatus.setValueIndex(1);
+//            } else {
+//                mBatteryStatus.setValueIndex(0);
+//            }
+//            mBatteryStatus.setSummary(mBatteryStatus.getEntry());
+//        }
 
         // Set the clock align value
         if (mClockAlign != null) {
