@@ -44,6 +44,8 @@ import android.view.IWindowManager;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.CMDProcessor;
+import com.android.settings.Helpers;
 
 public class SystemSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -176,7 +178,8 @@ public class SystemSettings extends SettingsPreferenceFragment implements
             int val = Integer.parseInt((String) objValue); 
             Settings.System.putInt(getActivity().getContentResolver(), 
                 Settings.System.RECENT_APP_SWITCHER, val); 
-            //Helpers.restartSystemUI(); 
+            //new CMDProcessor().su.run("pkill -TERM -f com.android.systemui");
+			Helpers.restartSystemUI(); 
         return true; 
 		}
          return false;       
